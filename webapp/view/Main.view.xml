@@ -1,0 +1,50 @@
+<mvc:View controllerName="ZDEMO_VALUE_HELP.controller.Main" 
+	xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:content>
+							
+							<Label text="Carrier"/>
+							<Input id="carrierInputSingle" placeholder="Enter Carrier ..." showSuggestion="true" showValueHelp="true"
+								suggestionItems="{/CarrierSet}" type="Text" valueHelpRequest="handleValueHelp">
+								<suggestionItems>
+									<core:Item text="{Carrid}"/>
+								</suggestionItems>
+							</Input>
+							
+							<Label text="Carrier"/>
+							<Input id="carrierInput" placeholder="Enter Carrier ..." showSuggestion="true" 
+									suggestionRows="{/CarrierSet}" type="Text">
+								<suggestionColumns>
+									<Column demandPopin="true" hAlign="Begin" popinDisplay="Inline">
+										<Label text="CarrierId"/>
+									</Column>
+									<Column demandPopin="true" hAlign="Center" minScreenWidth="Tablet" popinDisplay="Inline">
+										<Label text="Carrier Name"/>
+									</Column>
+									<Column demandPopin="false" hAlign="Center" minScreenWidth="Tablet" popinDisplay="Inline">
+										<Label text="Carrier Url"/>
+									</Column>
+									
+								</suggestionColumns>
+								<suggestionRows>
+									<ColumnListItem>
+										<cells>
+											<Label text="{Carrid}"/>
+											<Label text="{Carrname}"/>
+											<Label text="{Url}"/>
+										</cells>
+									</ColumnListItem>
+								</suggestionRows>
+							</Input>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
